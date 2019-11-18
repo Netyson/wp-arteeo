@@ -1,1 +1,8 @@
-{}
+{
+    "theme": {
+        "slug": "arteeo",
+        "name": "Arteeo",
+        "author": "Gabriel Figueiro",
+        "PHPNamespace": "Arteeo\\Arteeo"
+    }
+}
