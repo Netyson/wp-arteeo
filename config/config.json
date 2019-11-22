@@ -1,0 +1,14 @@
+{
+
+  "theme": {
+    "slug": "arteeo",
+    "name": "Arteeo ",
+    "author": "Arteeo - Gabriel Figueiro",
+    "PHPNamespace": "Arteeo\\Arteeo"
+  },
+  "dev": {
+    "browserSync": {
+      "live": false
+    }
+  }
+}
