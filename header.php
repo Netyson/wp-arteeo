@@ -40,7 +40,14 @@ namespace WP_Rig\WP_Rig;
 
 		<?php get_template_part( 'template-parts/header/aside' ); ?>
 
-		<?php get_template_part( 'template-parts/header/branding' ); ?>
+		<?php
+		if ( is_front_page() ) {
+			get_template_part( 'template-parts/header/branding-front' );
+		} else {
+			get_template_part( 'template-parts/header/branding' );
+			get_template_part( 'template-parts/header/breadcrumb' );
+			// get_template_part( 'template-parts/header/navigation' );
+		}
+		?>
 
-		<?php get_template_part( 'template-parts/header/navigation' ); ?>
 	</header><!-- #masthead -->
