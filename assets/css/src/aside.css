@@ -1,6 +1,7 @@
 /*--------------------------------------------------------------
 # Aside
 --------------------------------------------------------------*/
+
 .aside-navigation {
 	background-color: var(--color-theme-white);
 	position: fixed; /* or choose `absolute` depending on desired behavior*/
@@ -9,8 +10,28 @@
 	width: 265px;
 	left: -190px;
 	transition: transform 0.3s ease-in-out;
+	box-shadow: 0 0 28px 0 rgba(82,63,105,.08)
 
 }
+
+.aside-container ul{
+	margin: 0;
+	padding: 0;
+
+}
+
+.aside-navigation .aside-menu__link-text {
+	display: none;
+}
+
+.aside-navigation .aside-menu__item>.aside-menu__link {
+	align-self: flex-end;
+}
+
+.aside-navigation .aside-menu__item>.aside-menu__link {
+	padding: 9px 25px;
+}
+
 .aside-navigation--expanded {
 	background-color: var(--color-theme-white);
 	position: fixed; /* or choose `absolute` depending on desired behavior*/
@@ -18,21 +39,86 @@
 	bottom: 0;
 	width: 265px;
 	transition: transform 0.3s ease-in-out;
+	box-shadow: 0 0 28px 0 rgba(82,63,105,.08)
 
 }
 
-.aside-navigation .aside-brand{
+.aside-navigation--expanded .aside-brand svg {
+	transform: rotate(180deg);
+}
+
+.aside-brand{
 	padding: 0 1rem;
 	transition: all .3s ease;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
-    padding: 0 25px;
+    padding: 0 15px;
     height: 65px;
 }
 
+.aside-brand-toggler{
+	display: inline-block;
+    border: 0;
+    background: 0 0;
+    /* outline: 0!important; -- umrandung beim klicken*/
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 
+.aside-menu__item.aside-menu__item--active{
+	transition: background-color .3s;
+    background-color: #f3f4f5;
+}
+
+.aside-menu__item{
+	display: flex;
+	flex-direction: column;
+    flex-grow: 1;
+    float: none;
+	padding: 0;
+}
+
+.aside-menu__item>.aside-menu__link {
+	padding: 9px 15px;
+	cursor: pointer;
+	min-height: 44px;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    margin: 0;
+    text-decoration: none;
+    position: relative;
+}
+
+.aside-menu__link .aside-menu__link-icon {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 35px;
+    flex: 0 0 35px;
+	font-size: 1.3rem;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+    line-height: 0;
+}
+
+ .aside-menu__nav>.aside-menu__section {
+    margin: 20px 0 0 0;
+	height: 40px;
+	display: flex;
+    padding: 0 25px;
+}
+.aside-menu__nav>.aside-menu__section .aside-menu__section-text {
+    font-size: .9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+}
 /*--------------------------------------------------------------
 # Arteeo - Logo
 --------------------------------------------------------------*/
@@ -41,26 +127,7 @@
 	font-weight: 900;
 	font-size: 2rem;
 	text-transform: uppercase;
-	background: -webkit-linear-gradient(
-	  -45deg,
-	  var(--color-theme-primary),
-	  var(--color-theme-secondary),
-	  var(--color-theme-tertiary)
-	);
+	background: var(--color-link);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	background-size: 400% 400%;
-	animation: arteeoBG 35s ease infinite;
-  }
-
-  @keyframes arteeoBG {
-	0% {
-	  background-position: 0% 50%;
-	}
-	50% {
-	  background-position: 100% 50%;
-	}
-	100% {
-	  background-position: 0% 50%;
-	}
   }
