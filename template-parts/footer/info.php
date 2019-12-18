@@ -10,6 +10,10 @@ namespace WP_Rig\WP_Rig;
 ?>
 
 <div class="site-info">
+
+						<p>
+				© 2018 - 2019 Arteeo | <a href="https://dev.arteeo.ch/datenschutzerklaerung" target="_blank" rel="noopener">Datenschutzerklärung</a> | <a href="https://dev.arteeo.ch/allgemeine-geschaeftsbedingungen/">AGB</a> | <a href="https://dev.arteeo.ch/impressum/">Impressum</a> 			 </p>
+
 	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp-rig' ) ); ?>">
 		<?php
 		/* translators: %s: CMS name, i.e. WordPress. */
