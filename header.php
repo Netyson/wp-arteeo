@@ -36,18 +36,13 @@ namespace WP_Rig\WP_Rig;
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<?php get_template_part( 'template-parts/header/custom_header' ); ?>
-
-		<?php get_template_part( 'template-parts/header/aside' ); ?>
 
 		<?php
-		if ( is_front_page() ) {
-			get_template_part( 'template-parts/header/branding-front' );
-		} else {
-			get_template_part( 'template-parts/header/branding' );
-			get_template_part( 'template-parts/header/breadcrumb' );
-			// get_template_part( 'template-parts/header/navigation' );
-		}
-		?>
 
+		get_template_part( 'template-parts/header/custom_header' );
+		get_template_part( 'template-parts/header/aside' );
+		get_template_part( 'template-parts/header/branding' );
+		get_template_part( 'template-parts/header/breadcrumb' );
+		
+		?>
 	</header><!-- #masthead -->
