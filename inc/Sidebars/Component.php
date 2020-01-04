@@ -28,7 +28,7 @@ use function dynamic_sidebar;
 class Component implements Component_Interface, Templating_Component_Interface {
 
 	const PRIMARY_SIDEBAR_SLUG = 'sidebar-1';
-
+	const PRIMARY_FOOTER_SIDEBAR_SLUG = 'footer-1';
 	/**
 	 * Gets the unique identifier for the theme component.
 	 *
@@ -73,6 +73,17 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
+			]
+		);
+		register_sidebar(
+			[
+				'name'          => esc_html__( 'Footer', 'wp-rig' ),
+				'id'            => static::PRIMARY_FOOTER_SIDEBAR_SLUG,
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<section id="%1$s" class=" wp-block-column widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h6 class="widget-title">',
+				'after_title'   => '</h6>',
 			]
 		);
 	}
