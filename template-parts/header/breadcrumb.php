@@ -14,7 +14,7 @@ namespace WP_Rig\WP_Rig;
 	
 	if ( !is_home() && !is_front_page() || is_paged() ) {
 	echo '<div class="entry-content">';
-	echo '<nav class="breadcrumb alignwide">Sie sind hier: ';
+	echo '<nav class="breadcrumb alignwide">';
 	
 	global $post;
 	$homeLink = get_bloginfo('url');
