@@ -5,36 +5,55 @@
 @media (--wide-menu-query) {
 
 .aside-navigation {
+	position: fixed; /* or choose `absolute` depending on desired behavior*/
+	width: 265px;	
+	border-bottom: solid 1px;
+
+}
+
+.aside-navigation .aside-container{
+	display: none;
+}
+
+.aside-navigation--expanded {
 	background-color: var(--color-theme-white);
 	position: fixed; /* or choose `absolute` depending on desired behavior*/
 	top: 0;
 	bottom: 0;
 	width: 265px;
-	left: -190px;
-	transition: transform 0.3s ease-in-out;
-	box-shadow: 0 0 28px 0 rgba(82,63,105,.08)
-
 }
 
 }
 
 @media (--narrow-menu-query) {
 
+	
 .aside-navigation {
 	background-color: var(--color-theme-white);
-	position: sticky; /* or choose `absolute` depending on desired behavior*/
-	transition: transform 0.3s ease-in-out;
-	box-shadow: 0 0 28px 0 rgba(82,63,105,.08)
+	position: fixed; /* or choose `absolute` depending on desired behavior*/
+	width: 100%;
+	border-bottom: solid 1px;	
 }
-.aside-container{
+.aside-navigation .aside-container{
 	display: none;
 }
 
-.aside-navigation--expanded .aside-container {
-	display: block;
+.aside-navigation--expanded {
+	background-color: var(--color-theme-white);
+	position: fixed; /* or choose `absolute` depending on desired behavior*/
+	top: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.headroom--unpinned .aside-navigation{ 
+	transform: translateY(-100%);
+	
 }
 
 }
+
+/** No MEDIA Query **/
 
 .aside-container ul{
 	margin: 0;
@@ -53,19 +72,13 @@
 	padding: .6em 1.4em;
 }
 
-.aside-navigation--expanded {
-	background-color: var(--color-theme-white);
-	position: fixed; /* or choose `absolute` depending on desired behavior*/
-	top: 0;
-	bottom: 0;
-	width: 265px;
-	transition: transform 0.3s ease-in-out;
-	box-shadow: 0 0 28px 0 rgba(82,63,105,.08)
-
-}
 
 .aside-navigation--expanded .aside-brand svg {
-	transform: rotate(180deg);
+	transform: rotate(-90deg);
+}
+
+.aside-navigation .aside-brand svg {
+	transform: rotate(90deg);
 }
 
 .aside-brand{
@@ -148,6 +161,7 @@
 	font-size: 2rem;
 	text-transform: uppercase;
 	background: var(--color-link);
+	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
   }

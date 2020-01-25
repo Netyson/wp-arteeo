@@ -14,6 +14,7 @@ if ( ! wp_rig()->is_aside_nav_menu_active() ) {
 wp_rig()->print_styles( 'wp-rig-aside' );
 ?>
 
+<div id="start-aside">
 <nav id="aside-navigation" class="aside-navigation" aria-label="<?php esc_attr_e( 'Aside menu', 'wp-rig' ); ?>"
 	<?php
 	if ( wp_rig()->is_amp() ) {
@@ -158,3 +159,4 @@ wp_rig()->print_styles( 'wp-rig-aside' );
 	</ul>
 	</div>
 </nav><!-- #aside-navigation -->
+</div>

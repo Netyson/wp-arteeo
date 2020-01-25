@@ -49,6 +49,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function initialize() {
 		add_action( 'after_setup_theme', [ $this, 'action_register_nav_menus' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'action_enqueue_aside_script' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'action_enqueue_headroom_script' ] );
 	}
 	/**
 	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `wp_rig()`.
@@ -89,6 +90,32 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	/**
 	 * Enqueues a script for the aside menu.
 	 */
+	public function action_enqueue_headroom_script() {
+
+		// If the AMP plugin is active, return early.
+		if ( wp_rig()->is_amp() ) {
+			return;
+		}
+
+		// Enqueue the headroom script for handling scrooling--> https://wicky.nillia.ms/headroom.js/
+		wp_enqueue_script(
+			'wp-rig-headroom',
+			get_theme_file_uri( '/assets/js/headroom.min.js' ),
+			[],
+			wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/headroom.min.js' ) ),
+			false
+		);
+		wp_script_add_data( 'wp-rig-headroom', 'async', true );
+		wp_script_add_data( 'wp-rig-headroom', 'precache', true );
+		wp_localize_script(
+			'wp-rig-headroom',
+			'wpRigScreenReaderText',
+			[
+				'expand'   => __( 'Expand child menu', 'wp-rig' ),
+				'collapse' => __( 'Collapse child menu', 'wp-rig' ),
+			]
+		);
+	}
 	public function action_enqueue_aside_script() {
 
 		// If the AMP plugin is active, return early.
@@ -115,9 +142,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			]
 		);
 	}
-
-
-
 
 	/**
 	 * Displays the aside aside menu.
