@@ -7,7 +7,6 @@
 .aside-navigation {
 	position: fixed; /* or choose `absolute` depending on desired behavior*/
 	width: 225px;	
-	border-bottom: solid 1px;
 	font-size:1rem;
 }
 
