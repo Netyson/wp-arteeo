@@ -6,9 +6,9 @@
 
 .aside-navigation {
 	position: fixed; /* or choose `absolute` depending on desired behavior*/
-	width: 265px;	
+	width: 225px;	
 	border-bottom: solid 1px;
-
+	font-size:1rem;
 }
 
 .aside-navigation .aside-container{
@@ -20,7 +20,8 @@
 	position: fixed; /* or choose `absolute` depending on desired behavior*/
 	top: 0;
 	bottom: 0;
-	width: 265px;
+	width: 225px;
+	font-size:1rem;
 }
 
 }
